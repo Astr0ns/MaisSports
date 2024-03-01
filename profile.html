@@ -19,11 +19,11 @@
 
     <link rel="stylesheet" href="css/codes/sessoes.css">
     <link rel="stylesheet" href="css/codes/tendencia.css">
-    <link rel="stylesheet" href="css/codes/client-review.css">
     <link rel="stylesheet" href="css/codes/categorias.css">
     <link rel="stylesheet" href="css/codes/product-page.css">
     <link rel="stylesheet" href="css/codes/nav-bar.css">
     <link rel="stylesheet" href="css/codes/footer.css">
+    <link rel="stylesheet" href="css/codes/profile.css">
 
     <!-- Others Links -->
 
@@ -55,9 +55,7 @@
 
             <ul class="nav-list">
                 <li><a class="mob-og" href="login.html"><button><i class="bi bi-person">Entrar</i></button></a></li>
-                <li><a class="pc-og" href="login.html"><button onclick="logOut()"><i
-                                class="bi bi-person">LogOut</i></button></a></li <li><a href="index.html">Inicio</a>
-                </li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="/">Carrinho</a></li>
                 <li><a href="locais-esportivos.html">Locais Esportivos</a></li>
                 <li><a class="mob-og"><button onclick="logOut()"><i class="bi bi-person">LogOut</i></button></a></li>
@@ -75,46 +73,219 @@
         </div>
     </div>
 
+    <!--    Utilize "document.write(localStorage.getItem("name"));" para mostrar os dados digitados no cadastro    -->
 
-    <h2>Perfil</h2>
-    <h4>Bem Vindo <br>
-        <script>
-            document.write(localStorage.getItem("name"));
-        </script>
-    </h4>
-    
-    <div class="account">
-        <div class="ouw">
-            <h2>PEDIDOS</h2>
-            <p>Voçê realizou um total de <span>0</span> pedidos!</p>
-        </div>
-        <div class="ouw">
-            <h2>FAVORITOS</h2>
-            <p>Voçê tem <span>0</span> produtos em favoritos!</p>
-        </div>
-        <div class="ouw">
-            <h2>FAVORITOS</h2>
-            <p>Você tem <span>0</span> produtos favoritados</p>
-        </div>
-        <div class="ouw">
-            <h2>MEU CADASTRO</h2>
-            <ul>
-                <li><a href="/">Alterar E-mail</a></li>
-                <li><a href="/">Alterar Dados Pessoai</a></li>
-                <li><a href="/">Alterar Endereço</a></li>
-                <li><a href="/">Alterar Senha</a></li>
-            </ul>
-        </div>
+    <div class="infos">
+        <h2>Minha conta</h2>
 
+        <li>
+            <a class="login-btn" href="login.html">
+                <button>
+                    <i class="bi bi-person">Entre agora</i>
+                </button>
+            </a>
+        </li>
+
+        <li>
+            <a class="sair-btn" href="login.html">
+                <button onclick="logOut()">
+                    <i class="bi bi-person">Sair</i>
+                </button>
+            </a>
+        </li>
     </div>
 
+    <section class="historico">
+        <h4 class="wllc"><span>Bem vindo:</span></h4>
+        <h4 id="aviso">
+            <script>
+
+                if (localStorage.getItem("name") == null) {
+                    var paragrafo = document.getElementById("aviso")
+                    paragrafo.innerHTML = "Logue para Acessar sua informações!";
+
+                    const mobOgButton = document.querySelector(".sair-btn");
+                    const wellcomeMsg = document.querySelector(".wllc");
+                    mobOgButton.style.display = "none";
+                    wellcomeMsg.style.display = "none";
+
+                } else {
+                    document.write(localStorage.getItem("name"));
+
+                    const mobOgButton = document.querySelector(".sair-btn");
+                    const loginBtn = document.querySelector(".login-btn");
+                    mobOgButton.style.display = "block";
+                    loginBtn.style.display = "none";
+                }
+            </script>
+        </h4>
+        <div class="account">
+            <div class="nog">
+                <h2>PEDIDOS</h2>
+
+                <ul class="desc">
+                    <li>
+                        <p>Ultimos pedidos</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="nog">
+                <h2>MEU CADASTRO</h2>
+                <ul class="desc">
+                    <li>
+                        <p><a href="">Alterar dados pessoais</a></p>
+                    </li>
+                    <li>
+                        <p><a href="">Alterar e-mail</a></p>
+                    </li>
+                    <li>
+                        <p><a href="">Alterar senha</a></p>
+                    </li>
+                    <li>
+                        <p><a href="">Alterar meu endereço</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="nog">
+                <h2>PAGAMENTO</h2>
+                <ul class="desc">
+                    <li>
+                        <p><a href="/">Imprimir 2ª via de boleto</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="nog">
+
+                <div class="aviso-card"></div>
+
+                <h2>SERVIÇOS</h2>
+                <ul class="desc">
+                    <li>
+                        <p><a href="favoritos.html">Produtos favoritos</a></p>
+                        <p><a href="favoritos.html">Locais favoritos</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            if (localStorage.getItem("name") == null) {
+
+                const accountSec = document.querySelector(".account");
+                accountSec.style.display = "none";
+
+            } else {
+
+                const accountSec = document.querySelector(".account");
+                accountSec.style.display = "block";
+
+            }
+        </script>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <figure class="footer-logo"><img src="images/icon-msports.jpg"></figure>
+                <p>Explore, Equipe-se, e Inspire-se com <br>+Sports: O Seu Portal para o Mundo do Esporte!</p>
+                <div id="footer_social_media">
+                    <a href="https://www.instagram.com/_maisport/" class="footer-link" id="instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://github.com/astr0ns" class="footer-link" id="github">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://fiebedu.sharepoint.com/sites/SPORT" class="footer-link" id="sharepoint">
+                        <h4 class="sp">S P</h4>
+                    </a>
+                </div>
+            </div>
+            <ul class="footer-list">
+                <li>
+                    <h3>blog</h3>
+                </li>
+                <li>
+                    <a href="" class="footer-link">Inicio</a>
+                </li>
+                <li>
+                    <a href="" class="footer-link">Categorias</a>
+                </li>
+                <li>
+                    <a href="" class="footer-link">Ajuda</a>
+                </li>
+            </ul>
+            <ul class="footer-list">
+                <li>
+                    <h3>Products</h3>
+                </li>
+                <li>
+                    <a href="" class="footer-link">Camisetas</a>
+                </li>
+                <li>
+                    <a href="" class="footer-link">Acessórios</a>
+                </li>
+                <li>
+                    <a href="" class="footer-link">Locais Esportivos</a>
+                </li>
+            </ul>
+            <div id="footer_subscribe">
+                <h3>subscribe</h3>
+                <p>
+                    Gostaria de receber promoções?<br>
+                    Digite seu e-mail
+                </p>
+
+                <div id="input_group">
+                    <input type="email" id="email">
+                    <button>
+                        <i class="bi bi-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div id="footer_copyright">
+            &#169
+            2023 All rights reserves for Samuel Heitor and TCC
+        </div>
+    </footer>
+
 </body>
+
+<script src="js/script.js"></script>
 
 <script>
     function logOut() {
         localStorage.removeItem("name");
         localStorage.removeItem("email");
         window.location.href = "login.html"
+
+    }
+</script>
+
+<script>
+    function updateUI() {
+        const current_user_email = localStorage.getItem("email");
+        const loginMessage = document.getElementById("loginMessage");
+        const notification = document.querySelector(".notification");
+
+        if (current_user_email === null) {
+            // O valor do email no localStorage é igual a null, portanto, mostre a notificação
+            notification.style.display = "block";
+
+            // Exibir a mensagem de login
+            loginMessage.style.display = "block";
+        } else {
+            // O usuário está logado, portanto, oculte a notificação
+            notification.style.display = "none";
+
+            // Ocultar a mensagem de login
+            loginMessage.style.display = "none";
+        }
     }
 </script>
 
