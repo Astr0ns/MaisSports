@@ -1,6 +1,6 @@
-if (localStorage.getItem("name") == null) {
-    var paragrafo = document.getElementById("aviso")
-    paragrafo.innerHTML = "Logue para Acessar sua informações!";
+if (localStorage.getItem('name') == null) {
+    var paragrafo = document.getElementById('aviso')
+    paragrafo.innerHTML = "Logue para Acessar suas informações!";
 
     const mobOgButton = document.querySelector(".sair-btn");
     const wellcomeMsg = document.querySelector(".wllc");
@@ -8,23 +8,10 @@ if (localStorage.getItem("name") == null) {
     wellcomeMsg.style.display = "none";
 
 } else {
-    document.write(localStorage.getItem("name"));
+    document.write(localStorage.getItem('name'));
 
     const mobOgButton = document.querySelector(".sair-btn");
     const loginBtn = document.querySelector(".login-btn");
     mobOgButton.style.display = "block";
     loginBtn.style.display = "none";
-}
-
-
-if (localStorage.getItem("name") == null) {
-
-    const accountSec = document.querySelector(".account");
-    accountSec.style.display = "none";
-
-} else {
-
-    const accountSec = document.querySelector(".account");
-    accountSec.style.display = "block";
-
 }
