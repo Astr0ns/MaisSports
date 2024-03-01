@@ -34,9 +34,7 @@
 
 <body>
     <header>
-
         <nav>
-
             <a class="logo" href="index.html"><img src="images/LOGO.png"></a>
             <div class="box">
                 <input type="checkbox" id="check">
@@ -64,40 +62,6 @@
                             <i class="bi bi-person">Sair</i>
                         </button>
                     </a></li>
-                <script>
-                    function updateUI() {
-                        const current_user_email = localStorage.getItem("email");
-
-                        if (current_user_email) {
-                            // O usuário está logado, portanto, oculte os botões "mob-og" e "pc-og"
-                            const mobOgButton = document.querySelector(".mob-og");
-                            const pcOgButton = document.querySelector(".pc-og");
-                            const profButton = document.querySelector(".prof");
-                            mobOgButton.style.display = "none";
-                            pcOgButton.style.display = "none";
-                            profButton.style.display = "block";
-
-                            // Mostre o botão "Log Out"
-                            const logOutButton = document.querySelector(".log-out");
-                            logOutButton.style.display = "block";
-                        } else {
-                            // O usuário não está logado, portanto, mostre os botões "mob-og" e "pc-og"
-                            const mobOgButton = document.querySelector(".mob-og");
-                            const pcOgButton = document.querySelector(".pc-og");
-                            const profButton = document.querySelector(".prof");
-                            mobOgButton.style.display = "none";
-                            profButton.style.display = "none";
-                            pcOgButton.style.display = "block";
-
-                            // Oculte o botão "Log Out"
-                            const logOutButton = document.querySelector(".log-out");
-                            logOutButton.style.display = "none";
-                        }
-                    }
-
-                    // Chame a função de atualização da interface quando a página for carregada
-                    window.onload = updateUI;
-                </script>
                 <li><a class="pc-og" href="login.html">Entrar</a></li>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="carrinho.html">Carrinho</a></li>
@@ -161,27 +125,7 @@
             </div>
 
         </div>
-        <script>
-
-            var radio = document.querySelector('.manual-btn')
-            var cont = 1
-
-            document.getElementById('radio1').checked = true
-
-            setInterval(() => {
-                proximaImg()
-            }, 5000)
-
-            function proximaImg() {
-                cont++
-
-                if (cont > 4) {
-                    cont = 1
-                }
-
-                document.getElementById('radio' + cont).checked = true
-            }
-        </script>
+        <script></script>
 
     </section>
 
@@ -229,6 +173,7 @@
             <img class="inic-espt-mob" src="images/locais-categ.jpeg" alt="">
         </a>
     </section>
+
     <!-- Sessôes dos produtos -->
 
     <div class="center-text">
@@ -350,15 +295,9 @@
             </div>
         </div>
 
-
-
-
         <div class="center-text-camisas">
             <h2>Camisas de <span>Time</span></h2>
         </div>
-
-
-
 
         <div class="products">
             <div class="row">
@@ -564,14 +503,9 @@
     </footer>
 
     <script src="js/script.js"></script>
-
-    <script>
-        function logOut() {
-            localStorage.removeItem("name");
-            localStorage.removeItem("email");
-            window.location.href = "login.html"
-        }
-    </script>
+    <script src="js/carousel.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/updateUI.js"></script>
 </body>
 
 </html>

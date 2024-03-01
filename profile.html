@@ -99,24 +99,6 @@
         <h4 class="wllc"><span>Bem vindo:</span></h4>
         <h4 id="aviso">
             <script>
-
-                if (localStorage.getItem("name") == null) {
-                    var paragrafo = document.getElementById("aviso")
-                    paragrafo.innerHTML = "Logue para Acessar sua informações!";
-
-                    const mobOgButton = document.querySelector(".sair-btn");
-                    const wellcomeMsg = document.querySelector(".wllc");
-                    mobOgButton.style.display = "none";
-                    wellcomeMsg.style.display = "none";
-
-                } else {
-                    document.write(localStorage.getItem("name"));
-
-                    const mobOgButton = document.querySelector(".sair-btn");
-                    const loginBtn = document.querySelector(".login-btn");
-                    mobOgButton.style.display = "block";
-                    loginBtn.style.display = "none";
-                }
             </script>
         </h4>
         <div class="account">
@@ -168,19 +150,7 @@
             </div>
         </div>
 
-        <script>
-            if (localStorage.getItem("name") == null) {
 
-                const accountSec = document.querySelector(".account");
-                accountSec.style.display = "none";
-
-            } else {
-
-                const accountSec = document.querySelector(".account");
-                accountSec.style.display = "block";
-
-            }
-        </script>
 
         </div>
     </section>
@@ -257,36 +227,8 @@
 </body>
 
 <script src="js/script.js"></script>
-
-<script>
-    function logOut() {
-        localStorage.removeItem("name");
-        localStorage.removeItem("email");
-        window.location.href = "login.html"
-
-    }
-</script>
-
-<script>
-    function updateUI() {
-        const current_user_email = localStorage.getItem("email");
-        const loginMessage = document.getElementById("loginMessage");
-        const notification = document.querySelector(".notification");
-
-        if (current_user_email === null) {
-            // O valor do email no localStorage é igual a null, portanto, mostre a notificação
-            notification.style.display = "block";
-
-            // Exibir a mensagem de login
-            loginMessage.style.display = "block";
-        } else {
-            // O usuário está logado, portanto, oculte a notificação
-            notification.style.display = "none";
-
-            // Ocultar a mensagem de login
-            loginMessage.style.display = "none";
-        }
-    }
-</script>
+<script src="js/logout.js"></script>
+<script src="js/updateUI-profile.js"></script>
+<script src="js/updateUI-profile.js"></script>
 
 </html>
