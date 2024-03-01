@@ -19,7 +19,6 @@
 
     <link rel="stylesheet" href="css/codes/sessoes.css">
     <link rel="stylesheet" href="css/codes/tendencia.css">
-    <link rel="stylesheet" href="css/codes/client-review.css">
     <link rel="stylesheet" href="css/codes/categorias.css">
     <link rel="stylesheet" href="css/codes/product-page.css">
     <link rel="stylesheet" href="css/codes/nav-bar.css">
@@ -35,7 +34,7 @@
 
 <body>
     <header>
-        
+
         <nav>
 
             <a class="logo" href="index.html"><img src="images/LOGO.png"></a>
@@ -57,9 +56,51 @@
 
             <ul class="nav-list">
                 <li><a class="mob-og" href="login.html"><button><i class="bi bi-person">Entrar</i></button></a></li>
+                <li><a class="prof" href="profile.html">Perfil</a></li>
+                <li><a class="sair-btn mob" href="login.html">
+                <li><a class="log-out" onclick="logOut()">Sair</a></li>
+                <li class="mob-og"><a>
+                        <button onclick="logOut()">
+                            <i class="bi bi-person">Sair</i>
+                        </button>
+                    </a></li>
+                <script>
+                    function updateUI() {
+                        const current_user_email = localStorage.getItem("email");
+
+                        if (current_user_email) {
+                            // O usuário está logado, portanto, oculte os botões "mob-og" e "pc-og"
+                            const mobOgButton = document.querySelector(".mob-og");
+                            const pcOgButton = document.querySelector(".pc-og");
+                            const profButton = document.querySelector(".prof");
+                            mobOgButton.style.display = "none";
+                            pcOgButton.style.display = "none";
+                            profButton.style.display = "block";
+
+                            // Mostre o botão "Log Out"
+                            const logOutButton = document.querySelector(".log-out");
+                            logOutButton.style.display = "block";
+                        } else {
+                            // O usuário não está logado, portanto, mostre os botões "mob-og" e "pc-og"
+                            const mobOgButton = document.querySelector(".mob-og");
+                            const pcOgButton = document.querySelector(".pc-og");
+                            const profButton = document.querySelector(".prof");
+                            mobOgButton.style.display = "none";
+                            profButton.style.display = "none";
+                            pcOgButton.style.display = "block";
+
+                            // Oculte o botão "Log Out"
+                            const logOutButton = document.querySelector(".log-out");
+                            logOutButton.style.display = "none";
+                        }
+                    }
+
+                    // Chame a função de atualização da interface quando a página for carregada
+                    window.onload = updateUI;
+                </script>
                 <li><a class="pc-og" href="login.html">Entrar</a></li>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="/">Carrinho</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
                 <li><a href="locais-esportivos.html">Locais Esportivos</a></li>
             </ul>
         </nav>
@@ -165,7 +206,8 @@
             </div>
 
             <div class="pow">
-                <img src="images/bskt-categ.jpeg" alt="basquete">
+                <a href="#">
+                    <img src="images/bskt-categ.jpeg" alt="basquete">
                 </a>
             </div>
         </div>
@@ -178,7 +220,7 @@
 
 
     <section class="espt-img">
-        
+
         <a href="locais-esportivos.html">
             <img class="inic-espt-pc" src="images/locais-page.jpeg" alt="">
         </a>
@@ -521,8 +563,15 @@
         </div>
     </footer>
 
-    <script src="js/valid.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+        function logOut() {
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            window.location.href = "login.html"
+        }
+    </script>
 </body>
 
 </html>
