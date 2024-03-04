@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+}
+
+.side-bar{
+    flex: 1;
+}
+.products {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    padding: 45px;
+    gap: 2rem;
+}
+.products-card {
+    position: relative;
+    transition: all .40s;
+}
+.products img{
+    width: 100%;
+    height: auto;
+    transition: all .40s;
+}
+.products img:hover{
+    transform: scale(0.9);
+}
