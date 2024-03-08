@@ -16,11 +16,6 @@
     padding: 0;
 }
 
-header{
-    position: fixed;
-    width: 100%;
-}
-
 .nav-list a {
     color: var(--cor-fonte2);
     text-decoration: none;
