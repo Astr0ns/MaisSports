@@ -29,17 +29,18 @@ aside {
 
 section .inicial-imagem {
     width: 100%;
-    display: flex;
+    margin-left: 10%;
+    margin-top: 6%;
     flex-direction: row;
-    align-content: center;
     justify-content: center;
     align-items: center;
-    margin-left: 10%;
+    display: flex;
 }
 
 section .inicial-imagem img {
     width: 79rem;
     height: 31rem;
+    box-shadow: 0px 1px 12px grey;
 }
 
 section.sub-solid {
@@ -48,8 +49,6 @@ section.sub-solid {
     flex-direction: row;
     margin-left: 29%;
 }
-
-
 
 .products {
     z-index: 0;
@@ -79,11 +78,11 @@ section.sub-solid {
     display: flex;
     align-items: start;
     justify-content: start;
-    padding: 35px;
 }
 
 .solid {
     height: 90vh;
+    width: 93%;
 }
 
 main {
