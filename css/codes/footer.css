@@ -20,6 +20,11 @@ figure img{
 
 }
 
+footer .footer-social-medias img{
+  width: 26px;
+}
+
+
 #footer_content {
   background-color: #f5f5f5;
   display: grid;
