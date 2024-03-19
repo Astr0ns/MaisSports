@@ -52,7 +52,7 @@ h3 .lr {
     background-color: var(--cor-bar);
     border-radius: 10px;
     width: 490px;
-    height: 547px;
+    height: 600px;
     padding: 35px;
 }
 
@@ -126,4 +126,9 @@ button#save-btn {
     color: var(--cor-fonte);
     border: none;
     border-radius: 15px;
+}
+
+section#successMessage {
+    height: 5rem;
+    background-color: rgba(0, 172, 0, 0.479);
 }

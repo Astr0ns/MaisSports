@@ -76,7 +76,8 @@
                     <section class="form-group">
                         <h3 class="lr">Digite seu nome completo</h3>
                         <label for="name"></label>
-                        <input id="name" type="text" name="nome" placeholder="Digite seu nome" required>
+                        <input id="name" type="text" name="nome" placeholder="Digite seu nome" required required
+                            pattern="[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ ]{2,}">
                     </section>
 
                     <section class="form-group">
@@ -88,12 +89,14 @@
                     <section class="form-group">
                         <h3 class="lr">Digite sua Senha</h3>
                         <label for="password"></label>
-                        <input id="password" type="password" name="senha" placeholder="Digite sua senha"  required>
+                        <input id="password" type="password" name="senha" placeholder="Digite sua senha" required
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}">
                     </section>
-
+                    <section id="valid"></section>
                     <section class="text-center">
-                        <button type="button" onclick="saveData()" class="btn btn-primary" id="save-btn">Entrar</button>
+                        <button type="submit" onclick="saveData()" class="btn btn-primary" id="save-btn" required>Entrar</button>
                     </section>
+                    <section id="valid-sucess"></section>
 
                 </form>
 
@@ -176,6 +179,8 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/validation-1.js"></script>
     <script src="js/create-account.js"></script>
 </body>
+
 </html>

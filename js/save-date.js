@@ -8,7 +8,10 @@ function saveData() {
     if (user_records.some((v) => {
         return v.email == email && v.password == password
     })) {
-        alert("login successfull")
+        let valid = document.getElementById('valid-sucess');
+        let stro = "<section class='validation-sucess'><h4>Logado com sucesso!!</h4></section> "
+        valid.innerHTML = stro;
+
         let current_user = user_records.filter((v) => {
             return v.email == email && v.password == password
         })[0]
@@ -19,8 +22,15 @@ function saveData() {
 
     }
     else {
-        alert("login fall");
+        let valid = document.getElementById('valid');
+        let stro = "<section class='validation-error'><h4>Senha ou email incorretos!!</h4></section> "
+        valid.innerHTML = stro;
     }
 
 }
 
+document.addEventListener("keydown", () => {
+    if (event.keyCode === 13) {
+      saveData()
+    }
+})

@@ -21,7 +21,10 @@
     border-radius: 10px;
     padding: 35px 35px;
     overflow: hidden;
+}
 
+section.container {
+    padding: 6%;
 }
 
 .product-info {
@@ -327,7 +330,7 @@
         font-size: 16px;
     }
 
-    .product-info h3{
+    .product-info h3 {
         font-weight: normal;
     }
 

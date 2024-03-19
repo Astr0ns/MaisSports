@@ -7,11 +7,16 @@ function saveData() {
     let user_records = new Array();
     user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
     if (user_records.some((v) => {
-        return v.email == email
+        return v.email == email && v.password == password && !(v.name == "") && !(v.password == "") && !(v.email == "")
+
     })) {
-        alert("Casdastrado com sucesso! Vá para a pagina de login para acessar seu perfil!");
+        let valid = document.getElementById('valid-sucess');
+        let stro = "<section class='validation-sucess'><h4>Conta criada com sucesso!!</h4></section> "
+        valid.innerHTML = stro;
     }
     else {
+
+
         user_records.push({
             "name": name,
             "email": email,
