@@ -22,9 +22,10 @@
     justify-content: center;
 }
 
-.tam {
+.tamanhos select {
     font-size: 18px;
     border: solid 1px;
+    border-radius: 10px;
     width: 70px;
     transform: translate(0.1 ease);
 }
@@ -46,6 +47,7 @@
     font-size: 16px;
     margin-left: 10px;
     border: 1px solid var(--cor-fundo2);
+    border-radius: 10px;
 }
 
 .tamanhos input:focus {
