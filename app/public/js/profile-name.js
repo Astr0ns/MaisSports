@@ -1,0 +1,1 @@
+document.write(localStorage.getItem("name"));
